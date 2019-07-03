@@ -1,0 +1,79 @@
+---
+title: "SQL Workshop"
+---
+
+<style>
+#prerequisite>ul>li {
+   margin-bottom: 10px;
+}
+</style>
+
+## Prerequisite
+
+Please go through the following short video tutorials before the SAS workshop.
+
+**SAS Visual Toolset on SAS Viya**
+
+* Introducing SAS Viya
+
+    * [SAS Viya: The Big Picture](https://video.sas.com/detail/videos/introducing-sas-viya/video/4911667600001/sas%C2%AE-viya%E2%84%A2:-the-big-picture?autoStart=true) (4m)
+    * [Interoperability of SAS 9 and SAS Viya](https://video.sas.com/detail/videos/introducing-sas-viya/video/5726539647001/interoperability-of-sas%C2%AE-9-and-sas%C2%AE-viya%C2%AE?autoStart=true) (only the first 2min)
+    * [SAS Viya Programming for SAS 9 Programmers: Overview](https://video.sas.com/detail/videos/introducing-sas-viya/video/5334370004001/sas%C2%AE-viya%E2%84%A2-programming-for-sas%C2%AE-9-programmers:-overview?autoStart=true) (4m)
+
+* SAS Home
+
+    * [Customizing SAS Home 8.2 on SAS Viya](https://video.sas.com/detail/video/5677781722001/customizing-sas%C2%AE-home-8.2-on-sas%C2%AE-viya%C2%AE?autoStart=true&q=sas%20home) (5m)
+    
+
+* SAS Data Prepare
+
+    * [Using SAS Data Explorer to Import Local Files](https://video.sas.com/detail/videos/data-management__/video/5785551426001/using-sas%C2%AE-data-explorer-to-import-local-files?autoStart=true) (4m)
+    * [Using SAS Data Explorer to Profile Data for Better Understanding](https://video.sas.com/detail/videos/data-management__/video/5785551338001/using-sas%C2%AE-data-explorer-to-profile-data-for-better-understanding?autoStart=true) (4m)
+    * [Using SAS Data Studio to Prepare and Transform Data into the Desired Format](https://video.sas.com/detail/videos/data-management__/video/5785551710001/using-sas%C2%AE-data-studio-to-prepare-and-transform-data-into-the-desired-format?autoStart=true) (10m)
+    * [Using SAS Lineage Viewer to Manage and Govern Data Assets and Their Relationships](https://video.sas.com/detail/videos/data-management__/video/5785551427001/using-sas%C2%AE-lineage-viewer-to-manage-and-govern-data-assets-and-their-relationships?autoStart=true) (5m)
+
+* SAS Visual Analytics
+
+    * [Creating a Basic Report in SAS Visual Analytics on SAS Viya](https://video.sas.com/detail/videos/sas-visual-analytics__/video/5808941965001/creating-a-basic-report-in-sas%C2%AE-visual-analytics-on-sas%C2%AE-viya%C2%AE?autoStart=true) (6m)
+    * [Creating a Multi-Page Report with Interactions in SAS Visual Analytics on SAS Viya](https://video.sas.com/detail/videos/sas-visual-analytics__/video/5808946578001/creating-a-multi-page-report-with-interactions-in-sas%C2%AE-visual-analytics-on-sas%C2%AE-viya%C2%AE?autoStart=true) (6m)
+
+* SAS Visual Statistics
+
+    * [Getting Started with SAS Visual Statistics 8.2 on SAS Viya](https://video.sas.com/detail/videos/sas-visual-statistics__/video/5667477014001/getting-started-with-sas%C2%AE-visual-statistics-8.2-on-sas%C2%AE-viya%C2%AE?autoStart=true) (7m)
+    * [Building a Logistic Regression Model in SAS Visual Statistics 8.2 on SAS Viya](https://video.sas.com/detail/videos/sas-visual-statistics__/video/5667494455001/building-a-logistic-regression-model-in-sas%C2%AE-visual-statistics-8.2-on-sas%C2%AE-viya%C2%AE?autoStart=true) (5m)
+    * [Building a Clustering Model in SAS Visual Statistics 8.2 on SAS Viya](https://video.sas.com/detail/videos/sas-visual-statistics__/video/5667502711001/building-a-clustering-model-in-sas%C2%AE-visual-statistics-8.2-on-sas%C2%AE-viya%C2%AE?autoStart=true) (4m)
+
+**SAS Programming**
+
+* SAS Studio
+    
+    * [Getting Started with SAS Studio](https://video.sas.com/detail/videos/getting-started-with-sas-studio/video/4573016757001/getting-started-with-sas-studio?autoStart=true) (9m)
+
+* SAS 9 Programming
+    
+    * [Writing a Basic SAS Program](https://video.sas.com/detail/videos/getting-started-with-sas-studio/video/4573016765001/writing-a-basic-sas-program?autoStart=true) (6m)
+    * [Reading and Generating CSV Files Using Snippets in SAS Studio](https://video.sas.com/detail/videos/managing-data/video/4664327156001/reading-and-generating-csv-files-using-snippets-in-sas-studio?autoStart=true) (6m)
+    * [Accessing Data in SAS Libraries](https://video.sas.com/detail/videos/managing-data/video/4572997794001/accessing-data-in-sas-libraries?autoStart=true) (7m)
+    * [Creating a SAS Table from a CSV File](https://video.sas.com/detail/videos/managing-data/video/4573016758001/creating-a-sas-table-from-a-csv-file?autoStart=true) (6m)
+    * [Filtering a SAS Table in a DATA Step](https://video.sas.com/detail/videos/managing-data/video/4573016761001/filtering-a-sas-table-in-a-data-step?autoStart=true) (3m)
+    * [Performing Conditional Logic in SAS](https://video.sas.com/detail/videos/managing-data/video/4573016759001/performing-conditional-logic-in-sas?autoStart=true) (6m)
+    * [Creating a New Column in SAS](https://video.sas.com/detail/videos/managing-data/video/4573023399001/creating-a-new-column-in-sas?autoStart=true) (5m)
+    * [Merging SAS Tables in a Data Step](https://video.sas.com/detail/videos/managing-data/video/4572997800001/merging-sas-tables-in-a-data-step?autoStart=true) (4m)
+    * [The One-Way Frequencies Task in SAS Studio](https://video.sas.com/detail/videos/performing-statistical-analyses/video/5537534102001/the-one-way-frequencies-task-in-sas%C2%AE-studio?autoStart=true) (4m)
+    * [The Summary Statistics Task in SAS Studio](https://video.sas.com/detail/videos/performing-statistical-analyses/video/5537540644001/the-summary-statistics-task-in-sas%C2%AE-studio?autoStart=true) (4m)
+    * [The Table Analysis Task in SAS Studio](https://video.sas.com/detail/videos/performing-statistical-analyses/video/5537545489001/the-table-analysis-task-in-sas%C2%AE-studio?autoStart=true) (4m)
+    * [The Binary Logistic Regression Task in SAS Studio](https://video.sas.com/detail/videos/performing-statistical-analyses/video/5537523052001/the-binary-logistic-regression-task-in-sas%C2%AE-studio?autoStart=true) (8m)
+    * [The Linear Regression Task in SAS Studio](https://video.sas.com/detail/videos/performing-statistical-analyses/video/5537540651001/the-linear-regression-task-in-sas%C2%AE-studio?autoStart=true) (8m)
+
+* SAS Viya Programming
+
+    * [Understanding Caslibs and Loading Data in SAS Viya](https://video.sas.com/detail/videos/an-introduction-to-sas-viya-programming-for-sas-9-programmers/video/5334369476001/understanding-caslibs-and-loading-data-in-sas%C2%AE-viya%E2%84%A2?autoStart=true) (7m)
+    * [Using the DATA Step in SAS Viya](https://video.sas.com/detail/videos/an-introduction-to-sas-viya-programming-for-sas-9-programmers/video/5334371787001/using-the-data-step-in-sas%C2%AE-viya%E2%84%A2?autoStart=true) (6m)
+    * [Processing Data in Groups with the DATA Step in SAS Viya](https://video.sas.com/detail/videos/an-introduction-to-sas-viya-programming-for-sas-9-programmers/video/5334370009001/processing-data-in-groups-with-the-data-step-in-sas%C2%AE-viya%E2%84%A2?autoStart=true) (5m)
+    * [Logistic Regression Modeling Using the LOGSELECT Procedure in SAS Viya](https://video.sas.com/detail/videos/an-introduction-to-sas-viya-programming-for-sas-9-programmers/video/5334372288001/logistic-regression-modeling-using-the-logselect-procedure-in-sas%C2%AE-viya%E2%84%A2?autoStart=true) (5m)
+    * [Regression Modeling Using REGSELECT Procedure in SAS Viya](https://video.sas.com/detail/videos/an-introduction-to-sas-viya-programming-for-sas-9-programmers/video/5334369481001/regression-modeling-using-the-regselect-procedure-in-sas%C2%AE-viya%E2%84%A2?autoStart=true) (4m)
+    * [Unsupervised Segmentation Using the KCLUS Procedure in SAS Viya](https://video.sas.com/detail/videos/an-introduction-to-sas-viya-programming-for-sas-9-programmers/video/5334371789001/unsupervised-segmentation-using-the-kclus-procedure-in-sas%C2%AE-viya%E2%84%A2?autoStart=true) (5m)
+
+* Online Course on SAS 9 Programming (Optional)
+
+    * [Coursera SAS Programming Specialization](https://www.coursera.org/specializations/sas-programming) / Course 1: [Getting Started with SAS Programming](https://www.coursera.org/learn/sas-programming-basics) (click enroll and then audit for free access).

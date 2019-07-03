@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>SQL Workshop</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">MMA SAS Workshop</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">SQL Workshop</h1>
+
+</div>
+
+
+<style>
+#prerequisite>ul>li {
+   margin-bottom: 10px;
+}
+</style>
+<div id="prerequisite" class="section level2">
+<h2>Prerequisite</h2>
+<p>Please go through the following short video tutorials before the SAS workshop.</p>
+<p><strong>SAS Visual Toolset on SAS Viya</strong></p>
+<ul>
+<li><p>Introducing SAS Viya</p>
+<ul>
+<li><a href="https://video.sas.com/detail/videos/introducing-sas-viya/video/4911667600001/sas%C2%AE-viya%E2%84%A2:-the-big-picture?autoStart=true">SAS Viya: The Big Picture</a> (4m)</li>
+<li><a href="https://video.sas.com/detail/videos/introducing-sas-viya/video/5726539647001/interoperability-of-sas%C2%AE-9-and-sas%C2%AE-viya%C2%AE?autoStart=true">Interoperability of SAS 9 and SAS Viya</a> (only the first 2min)</li>
+<li><a href="https://video.sas.com/detail/videos/introducing-sas-viya/video/5334370004001/sas%C2%AE-viya%E2%84%A2-programming-for-sas%C2%AE-9-programmers:-overview?autoStart=true">SAS Viya Programming for SAS 9 Programmers: Overview</a> (4m)</li>
+</ul></li>
+<li><p>SAS Home</p>
+<ul>
+<li><a href="https://video.sas.com/detail/video/5677781722001/customizing-sas%C2%AE-home-8.2-on-sas%C2%AE-viya%C2%AE?autoStart=true&amp;q=sas%20home">Customizing SAS Home 8.2 on SAS Viya</a> (5m)</li>
+</ul></li>
+<li><p>SAS Data Prepare</p>
+<ul>
+<li><a href="https://video.sas.com/detail/videos/data-management__/video/5785551426001/using-sas%C2%AE-data-explorer-to-import-local-files?autoStart=true">Using SAS Data Explorer to Import Local Files</a> (4m)</li>
+<li><a href="https://video.sas.com/detail/videos/data-management__/video/5785551338001/using-sas%C2%AE-data-explorer-to-profile-data-for-better-understanding?autoStart=true">Using SAS Data Explorer to Profile Data for Better Understanding</a> (4m)</li>
+<li><a href="https://video.sas.com/detail/videos/data-management__/video/5785551710001/using-sas%C2%AE-data-studio-to-prepare-and-transform-data-into-the-desired-format?autoStart=true">Using SAS Data Studio to Prepare and Transform Data into the Desired Format</a> (10m)</li>
+<li><a href="https://video.sas.com/detail/videos/data-management__/video/5785551427001/using-sas%C2%AE-lineage-viewer-to-manage-and-govern-data-assets-and-their-relationships?autoStart=true">Using SAS Lineage Viewer to Manage and Govern Data Assets and Their Relationships</a> (5m)</li>
+</ul></li>
+<li><p>SAS Visual Analytics</p>
+<ul>
+<li><a href="https://video.sas.com/detail/videos/sas-visual-analytics__/video/5808941965001/creating-a-basic-report-in-sas%C2%AE-visual-analytics-on-sas%C2%AE-viya%C2%AE?autoStart=true">Creating a Basic Report in SAS Visual Analytics on SAS Viya</a> (6m)</li>
+<li><a href="https://video.sas.com/detail/videos/sas-visual-analytics__/video/5808946578001/creating-a-multi-page-report-with-interactions-in-sas%C2%AE-visual-analytics-on-sas%C2%AE-viya%C2%AE?autoStart=true">Creating a Multi-Page Report with Interactions in SAS Visual Analytics on SAS Viya</a> (6m)</li>
+</ul></li>
+<li><p>SAS Visual Statistics</p>
+<ul>
+<li><a href="https://video.sas.com/detail/videos/sas-visual-statistics__/video/5667477014001/getting-started-with-sas%C2%AE-visual-statistics-8.2-on-sas%C2%AE-viya%C2%AE?autoStart=true">Getting Started with SAS Visual Statistics 8.2 on SAS Viya</a> (7m)</li>
+<li><a href="https://video.sas.com/detail/videos/sas-visual-statistics__/video/5667494455001/building-a-logistic-regression-model-in-sas%C2%AE-visual-statistics-8.2-on-sas%C2%AE-viya%C2%AE?autoStart=true">Building a Logistic Regression Model in SAS Visual Statistics 8.2 on SAS Viya</a> (5m)</li>
+<li><a href="https://video.sas.com/detail/videos/sas-visual-statistics__/video/5667502711001/building-a-clustering-model-in-sas%C2%AE-visual-statistics-8.2-on-sas%C2%AE-viya%C2%AE?autoStart=true">Building a Clustering Model in SAS Visual Statistics 8.2 on SAS Viya</a> (4m)</li>
+</ul></li>
+</ul>
+<p><strong>SAS Programming</strong></p>
+<ul>
+<li><p>SAS Studio</p>
+<ul>
+<li><a href="https://video.sas.com/detail/videos/getting-started-with-sas-studio/video/4573016757001/getting-started-with-sas-studio?autoStart=true">Getting Started with SAS Studio</a> (9m)</li>
+</ul></li>
+<li><p>SAS 9 Programming</p>
+<ul>
+<li><a href="https://video.sas.com/detail/videos/getting-started-with-sas-studio/video/4573016765001/writing-a-basic-sas-program?autoStart=true">Writing a Basic SAS Program</a> (6m)</li>
+<li><a href="https://video.sas.com/detail/videos/managing-data/video/4664327156001/reading-and-generating-csv-files-using-snippets-in-sas-studio?autoStart=true">Reading and Generating CSV Files Using Snippets in SAS Studio</a> (6m)</li>
+<li><a href="https://video.sas.com/detail/videos/managing-data/video/4572997794001/accessing-data-in-sas-libraries?autoStart=true">Accessing Data in SAS Libraries</a> (7m)</li>
+<li><a href="https://video.sas.com/detail/videos/managing-data/video/4573016758001/creating-a-sas-table-from-a-csv-file?autoStart=true">Creating a SAS Table from a CSV File</a> (6m)</li>
+<li><a href="https://video.sas.com/detail/videos/managing-data/video/4573016761001/filtering-a-sas-table-in-a-data-step?autoStart=true">Filtering a SAS Table in a DATA Step</a> (3m)</li>
+<li><a href="https://video.sas.com/detail/videos/managing-data/video/4573016759001/performing-conditional-logic-in-sas?autoStart=true">Performing Conditional Logic in SAS</a> (6m)</li>
+<li><a href="https://video.sas.com/detail/videos/managing-data/video/4573023399001/creating-a-new-column-in-sas?autoStart=true">Creating a New Column in SAS</a> (5m)</li>
+<li><a href="https://video.sas.com/detail/videos/managing-data/video/4572997800001/merging-sas-tables-in-a-data-step?autoStart=true">Merging SAS Tables in a Data Step</a> (4m)</li>
+<li><a href="https://video.sas.com/detail/videos/performing-statistical-analyses/video/5537534102001/the-one-way-frequencies-task-in-sas%C2%AE-studio?autoStart=true">The One-Way Frequencies Task in SAS Studio</a> (4m)</li>
+<li><a href="https://video.sas.com/detail/videos/performing-statistical-analyses/video/5537540644001/the-summary-statistics-task-in-sas%C2%AE-studio?autoStart=true">The Summary Statistics Task in SAS Studio</a> (4m)</li>
+<li><a href="https://video.sas.com/detail/videos/performing-statistical-analyses/video/5537545489001/the-table-analysis-task-in-sas%C2%AE-studio?autoStart=true">The Table Analysis Task in SAS Studio</a> (4m)</li>
+<li><a href="https://video.sas.com/detail/videos/performing-statistical-analyses/video/5537523052001/the-binary-logistic-regression-task-in-sas%C2%AE-studio?autoStart=true">The Binary Logistic Regression Task in SAS Studio</a> (8m)</li>
+<li><a href="https://video.sas.com/detail/videos/performing-statistical-analyses/video/5537540651001/the-linear-regression-task-in-sas%C2%AE-studio?autoStart=true">The Linear Regression Task in SAS Studio</a> (8m)</li>
+</ul></li>
+<li><p>SAS Viya Programming</p>
+<ul>
+<li><a href="https://video.sas.com/detail/videos/an-introduction-to-sas-viya-programming-for-sas-9-programmers/video/5334369476001/understanding-caslibs-and-loading-data-in-sas%C2%AE-viya%E2%84%A2?autoStart=true">Understanding Caslibs and Loading Data in SAS Viya</a> (7m)</li>
+<li><a href="https://video.sas.com/detail/videos/an-introduction-to-sas-viya-programming-for-sas-9-programmers/video/5334371787001/using-the-data-step-in-sas%C2%AE-viya%E2%84%A2?autoStart=true">Using the DATA Step in SAS Viya</a> (6m)</li>
+<li><a href="https://video.sas.com/detail/videos/an-introduction-to-sas-viya-programming-for-sas-9-programmers/video/5334370009001/processing-data-in-groups-with-the-data-step-in-sas%C2%AE-viya%E2%84%A2?autoStart=true">Processing Data in Groups with the DATA Step in SAS Viya</a> (5m)</li>
+<li><a href="https://video.sas.com/detail/videos/an-introduction-to-sas-viya-programming-for-sas-9-programmers/video/5334372288001/logistic-regression-modeling-using-the-logselect-procedure-in-sas%C2%AE-viya%E2%84%A2?autoStart=true">Logistic Regression Modeling Using the LOGSELECT Procedure in SAS Viya</a> (5m)</li>
+<li><a href="https://video.sas.com/detail/videos/an-introduction-to-sas-viya-programming-for-sas-9-programmers/video/5334369481001/regression-modeling-using-the-regselect-procedure-in-sas%C2%AE-viya%E2%84%A2?autoStart=true">Regression Modeling Using REGSELECT Procedure in SAS Viya</a> (4m)</li>
+<li><a href="https://video.sas.com/detail/videos/an-introduction-to-sas-viya-programming-for-sas-9-programmers/video/5334371789001/unsupervised-segmentation-using-the-kclus-procedure-in-sas%C2%AE-viya%E2%84%A2?autoStart=true">Unsupervised Segmentation Using the KCLUS Procedure in SAS Viya</a> (5m)</li>
+</ul></li>
+<li><p>Online Course on SAS 9 Programming (Optional)</p>
+<ul>
+<li><a href="https://www.coursera.org/specializations/sas-programming">Coursera SAS Programming Specialization</a> / Course 1: <a href="https://www.coursera.org/learn/sas-programming-basics">Getting Started with SAS Programming</a> (click enroll and then audit for free access).</li>
+</ul></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
