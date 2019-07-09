@@ -22,7 +22,8 @@ Please go through the following short video tutorials before the SAS workshop.
 
 * SAS Home
 
-    * [Customizing SAS Home 8.2 on SAS Viya](https://video.sas.com/detail/video/5677781722001/customizing-sas%C2%AE-home-8.2-on-sas%C2%AE-viya%C2%AE?autoStart=true&q=sas%20home) (5m)
+    * [Accessing Content in SAS Drive](https://video.sas.com/detail/video/5808938115001/accessing-content-in-sas%C2%AE-drive) (5m)
+    * [Organizing and Sharing Content in SAS Drive](https://video.sas.com/detail/video/5808946674001/) (4m)
     
 
 * SAS Data Prepare
