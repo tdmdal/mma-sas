@@ -8,7 +8,7 @@ title: "SAS Workshop"
 }
 </style>
 
-## Prerequisite
+### Prerequisite
 
 Please go through the following short video tutorials before the SAS workshop.
 
@@ -80,20 +80,20 @@ Please go through the following short video tutorials before the SAS workshop.
     * [Coursera SAS Programming Specialization](https://www.coursera.org/specializations/sas-programming) / Course 1: [Getting Started with SAS Programming](https://www.coursera.org/learn/sas-programming-basics) (click enroll and then audit for free access).
 
 
-## Dataset for SAS workshop
+### Datasets for SAS workshop
 
-### Northwind
+* Northwind
 
-* [Categories.csv](data/nw/Categories.csv)
-* [Customers.csv](data/nw/Customers.csv)
-* [Employees.csv](data/nw/Employees.csv)
-* [OrderDetails.csv](data/nw/OrderDetails.csv)
-* [Orders.csv](data/nw/Orders.csv)
-* [Products.csv](data/nw/Products.csv)
-* [Shippers.csv](data/nw/Shippers.csv)
-* [Suppliers.csv](data/nw/Suppliers.csv)
+    * [Categories.csv](data/nw/Categories.csv)
+    * [Customers.csv](data/nw/Customers.csv)
+    * [Employees.csv](data/nw/Employees.csv)
+    * [OrderDetails.csv](data/nw/OrderDetails.csv)
+    * [Orders.csv](data/nw/Orders.csv)
+    * [Products.csv](data/nw/Products.csv)
+    * [Shippers.csv](data/nw/Shippers.csv)
+    * [Suppliers.csv](data/nw/Suppliers.csv)
 
-### Others
+* Others
 
-* [Telco-Customer-Churn.csv](data/Telco-Customer-Churn.csv)
-* [churn_telecom.sas7bdat](data/churn_telecom.sas7bdat)
+   * [Telco-Customer-Churn.csv](data/Telco-Customer-Churn.csv)
+   * [churn_telecom.sas7bdat](data/churn_telecom.sas7bdat)
