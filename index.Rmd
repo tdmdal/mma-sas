@@ -20,7 +20,7 @@ Please go through the following short video tutorials before the SAS workshop.
     * [Interoperability of SAS 9 and SAS Viya](https://video.sas.com/detail/videos/introducing-sas-viya/video/5726539647001/interoperability-of-sas%C2%AE-9-and-sas%C2%AE-viya%C2%AE?autoStart=true) (only the first 2min)
     * [SAS Viya Programming for SAS 9 Programmers: Overview](https://video.sas.com/detail/videos/introducing-sas-viya/video/5334370004001/sas%C2%AE-viya%E2%84%A2-programming-for-sas%C2%AE-9-programmers:-overview?autoStart=true) (4m)
 
-* SAS Home
+* SAS Drive
 
     * [Accessing Content in SAS Drive](https://video.sas.com/detail/video/5808938115001/accessing-content-in-sas%C2%AE-drive) (5m)
     * [Organizing and Sharing Content in SAS Drive](https://video.sas.com/detail/video/5808946674001/) (4m)
@@ -97,3 +97,8 @@ Please go through the following short video tutorials before the SAS workshop.
 
    * [Telco-Customer-Churn.csv](data/Telco-Customer-Churn.csv)
    * [churn_telecom.sas7bdat](data/churn_telecom.sas7bdat)
+   
+### Slides for SAS workshop
+
+* Intro to SAS Viya Visual Toolset ([sas_bootcamp_1.pdf](sas_bootcamp_1.pdf))
+* Intro to SAS Programming ([sas_bootcamp_2_part1.pdf](sas_bootcamp_2_part1.pdf))
