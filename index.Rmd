@@ -101,4 +101,4 @@ Please go through the following short video tutorials before the SAS workshop.
 ### Slides for SAS workshop
 
 * Intro to SAS Viya Visual Toolset ([sas_bootcamp_1.pdf](sas_bootcamp_1.pdf))
-* Intro to SAS Programming ([sas_bootcamp_2_part1.pdf](sas_bootcamp_2_part1.pdf), [sas_bootcamp_2_part2.pdf](sas_bootcamp_2_part2.pdf))
+* Intro to SAS Programming ([sas_bootcamp_2_part1.pdf](sas_bootcamp_2_part1.pdf), [sas_bootcamp_2_part2.pdf](sas_bootcamp_2_part2.pdf), [part2_code.sas](part2_code.sas))
